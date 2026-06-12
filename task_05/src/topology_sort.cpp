@@ -2,7 +2,6 @@
 #include <vector>
 
 using namespace std;
-
 vector<int> func(int N, const vector<int>& temp){
     vector<int> result(N,0);
     vector<int> indexes;
