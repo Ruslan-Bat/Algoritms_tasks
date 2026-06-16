@@ -1,5 +1,6 @@
 
 #include <gtest/gtest.h>
+
 #include "func_09.h"
 
 TEST(AVLTreeTest, InsertFindSimple) {
@@ -30,7 +31,7 @@ TEST(AVLTreeTest, RemoveNodeWithOneChild) {
   AVLTree tree;
   tree.Insert(10);
   tree.Insert(5);
-  tree.Insert(2); // child of 5
+  tree.Insert(2);  // child of 5
   tree.Insert(15);
 
   tree.Remove(5);
@@ -45,9 +46,10 @@ TEST(AVLTreeTest, RemoveNodeWithTwoChildren) {
   std::vector<int> keys = {20, 10, 30, 5, 15, 25, 35};
   for (int k : keys) tree.Insert(k);
 
-  tree.Remove(20); // root with two children
+  tree.Remove(20);  // root with two children
   EXPECT_FALSE(tree.Find(20));
-  for (int k : keys) if (k != 20) EXPECT_TRUE(tree.Find(k));
+  for (int k : keys)
+    if (k != 20) EXPECT_TRUE(tree.Find(k));
 }
 
 TEST(AVLTreeTest, BulkInsertRemove) {
@@ -56,8 +58,9 @@ TEST(AVLTreeTest, BulkInsertRemove) {
   for (int i = 2; i <= 100; i += 2) tree.Remove(i);
 
   for (int i = 1; i <= 100; ++i) {
-    if (i % 2 == 0) EXPECT_FALSE(tree.Find(i));
-    else EXPECT_TRUE(tree.Find(i));
+    if (i % 2 == 0)
+      EXPECT_FALSE(tree.Find(i));
+    else
+      EXPECT_TRUE(tree.Find(i));
   }
 }
-

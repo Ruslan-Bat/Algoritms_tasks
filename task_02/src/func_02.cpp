@@ -1,5 +1,6 @@
-#include <vector>
 #include "func_02.h"
+
+#include <vector>
 using namespace std;
 /*
 int func(int N, vector<int> mass){
@@ -14,20 +15,19 @@ int func(int N, vector<int> mass){
 }
 */
 
-int func(int N, const vector<int>& mass){
+int func(int N, const vector<int>& mass) {
+  int left = 0;
+  int right = N - 1;
+  int mid = N - 1;
 
-    int left=0;
-    int right = N-1;
-    int mid = N-1;
+  while (left - right != 1) {
+    mid = (right - left) / 2 + left;
 
-    while(left-right != 1){
-        mid = (right-left)/2 + left;
+    if (mass[mid] == 0)
+      left = mid;
+    else
+      right = mid;
+  }
 
-        if (mass[mid] == 0)
-            left = mid;
-        else
-            right = mid;
-    }
-
-    return left;
+  return left;
 }

@@ -1,7 +1,9 @@
 
 #include <gtest/gtest.h>
-#include "func_08.h"
+
 #include <vector>
+
+#include "func_08.h"
 
 TEST(QuickSelect, ExamplesFromReadme) {
   std::vector<int> a1 = {7, 10, 4, 3, 20};
@@ -29,7 +31,7 @@ TEST(QuickSelect, SingleElement) {
 }
 
 TEST(QuickSelect, AlreadySorted) {
-  std::vector<int> v = {1,2,3,4,5,6,7,8,9};
+  std::vector<int> v = {1, 2, 3, 4, 5, 6, 7, 8, 9};
   EXPECT_EQ(quick_selest(9, 4, v), 4);
   EXPECT_EQ(quick_selest(9, 9, v), 9);
 }

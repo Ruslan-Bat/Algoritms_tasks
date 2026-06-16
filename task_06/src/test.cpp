@@ -1,9 +1,10 @@
 
 #include <gtest/gtest.h>
-#include "func_06.h"
-#include <vector>
-#include <climits>
 
+#include <climits>
+#include <vector>
+
+#include "func_06.h"
 
 TEST(FishBuyer, Example1) {
   std::vector<int> costs{5};
@@ -11,22 +12,21 @@ TEST(FishBuyer, Example1) {
 }
 
 TEST(FishBuyer, Example2) {
-  std::vector<int> costs{5,3,4};
+  std::vector<int> costs{5, 3, 4};
   ASSERT_EQ(12LL, func(3, 1, costs));
 }
 
 TEST(FishBuyer, Example3) {
-  std::vector<int> costs{5,3,4};
+  std::vector<int> costs{5, 3, 4};
   ASSERT_EQ(11LL, func(3, 3, costs));
 }
 
 TEST(FishBuyer, KOneEqualsSum) {
-  std::vector<int> costs{7,1,5,3};
+  std::vector<int> costs{7, 1, 5, 3};
   long long expected = 0;
   for (int x : costs) expected += x;
   ASSERT_EQ(expected, func((int)costs.size(), 1, costs));
 }
-
 
 TEST(FishBuyer, LargeValues) {
   std::vector<int> costs(50, 1000);

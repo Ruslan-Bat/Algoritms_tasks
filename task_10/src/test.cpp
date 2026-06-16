@@ -1,7 +1,9 @@
 
 #include <gtest/gtest.h>
-#include "func_10.h"
+
 #include <stdexcept>
+
+#include "func_10.h"
 
 TEST(HashTable, InsertGetContains) {
   hash_table ht(10);
@@ -37,7 +39,7 @@ TEST(HashTable, RemoveAndExceptions) {
 }
 
 TEST(HashTable, ManyCollisions) {
-  hash_table ht(1); // all keys map to same bucket
+  hash_table ht(1);  // all keys map to same bucket
   for (int i = 0; i < 20; ++i) ht.Insert(i, i * 10);
   for (int i = 0; i < 20; ++i) {
     EXPECT_TRUE(ht.Contains(i));

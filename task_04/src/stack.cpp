@@ -1,6 +1,5 @@
 #include "stack.hpp"
 
-
 void Stack::Push(int value) { data_.push_back(value); }
 
 int Stack::Pop() {
@@ -9,7 +8,7 @@ int Stack::Pop() {
   return result;
 }
 
-void MinStack::Push(int value) { 
+void MinStack::Push(int value) {
   data_.push_back(value);
   if (mins_.empty() || value < mins_.back())
     mins_.push_back(value);
@@ -24,4 +23,4 @@ int MinStack::Pop() {
   return result;
 }
 
-int MinStack::GetMin() { return mins_.back();}
+int MinStack::GetMin() { return mins_.back(); }
