@@ -1,3 +1,15 @@
 #include <iostream>
+#include <vector>
 
-int main() { return 0; }
+#include "func_12.h"
+
+int main() {
+  int S, N;
+  if (!(std::cin >> S)) return 0;
+  if (!(std::cin >> N)) return 0;
+  std::vector<int> coins(N);
+  for (int i = 0; i < N; ++i) std::cin >> coins[i];
+  int res = func(S, N, coins);
+  std::cout << res << '\n';
+  return 0;
+}

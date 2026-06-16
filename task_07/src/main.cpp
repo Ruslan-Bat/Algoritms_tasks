@@ -1,2 +1,19 @@
 
-int main() { return 0; }
+#include <iostream>
+#include <vector>
+
+#include "func_07.h"
+
+int main() {
+  int n;
+  if (!(std::cin >> n)) return 0;
+  std::vector<int> a(n);
+  for (int i = 0; i < n; ++i) std::cin >> a[i];
+  merge_sort(a);
+  for (int i = 0; i < n; ++i) {
+    if (i) std::cout << ' ';
+    std::cout << a[i];
+  }
+  if (n > 0) std::cout << '\n';
+  return 0;
+}

@@ -24,6 +24,7 @@ vector<int> func(int S, int N, vector<int> mass) {
         right++;
       else if (mass[right] + mass[left] > S)
         left--;
+      if (right >= left) break;
     }
   }
   if (N == 1) {  // Для корректной работы последнего теста добавлено условие
