@@ -20,7 +20,7 @@ int func(int N, const vector<int>& mass) {
   int right = N - 1;
   int mid = N - 1;
 
-  while (left - right != 1) {
+  while (right - left > 1) {
     mid = (right - left) / 2 + left;
 
     if (mass[mid] == 0)

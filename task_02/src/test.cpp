@@ -6,26 +6,22 @@
 
 TEST(Border01, Minimal) {
   std::vector<int> a{0, 1};
-  int idx = func(2, a);
-  ASSERT_EQ(0, idx);
+  ASSERT_EQ(0, func(2, a));
 }
 
 TEST(Border01, Middle) {
   std::vector<int> a{0, 0, 0, 1, 1};
-  int idx = func(5, a);
-  ASSERT_EQ(2, idx);
+  ASSERT_EQ(2, func(5, a));
 }
 
 TEST(Border01, LastZero) {
   std::vector<int> a{0, 0, 0, 0, 0, 1};
-  int idx = func(6, a);
-  ASSERT_EQ(4, idx);
+  ASSERT_EQ(4, func(6, a));
 }
 
 TEST(Border01, FirstBoundary) {
   std::vector<int> a{0, 1, 1, 1, 1};
-  int idx = func(5, a);
-  ASSERT_EQ(0, idx);
+  ASSERT_EQ(0, func(5, a));
 }
 
 TEST(Border01, AnyValid) {
