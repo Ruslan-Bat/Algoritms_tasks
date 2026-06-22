@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include "func_06.h"
+#include "MinTotalCost.h"
 
 int main() {
   int N, K;

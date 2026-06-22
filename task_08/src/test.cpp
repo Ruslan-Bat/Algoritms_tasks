@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "func_08.h"
+#include "QuickSelect.h"
 
 TEST(QuickSelect, ExamplesFromReadme) {
   std::vector<int> a1 = {7, 10, 4, 3, 20};

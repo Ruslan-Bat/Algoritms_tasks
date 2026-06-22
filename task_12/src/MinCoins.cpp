@@ -1,3 +1,5 @@
+#include "MinCoins.h"
+
 #include <vector>
 
 int MinCoins(int S, std::vector<int>& coins) {

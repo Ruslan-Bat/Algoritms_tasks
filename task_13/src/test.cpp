@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "func_13.h"
+#include "SelectMaxNonOverlappingIntervals.h"
 
 TEST(Func13, Example) {
   std::vector<std::pair<double, double>> lessons = {

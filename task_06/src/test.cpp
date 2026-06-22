@@ -4,7 +4,7 @@
 #include <climits>
 #include <vector>
 
-#include "func_06.h"
+#include "MinTotalCost.h"
 
 TEST(FishBuyer, Example1) {
   std::vector<int> costs{5};

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "func_11.h"
+#include "FindAnagramIndex.h"
 
 int main() {
   std::string s, p;

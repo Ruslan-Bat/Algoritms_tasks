@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include "func_02.h"
+#include "FindBoundaryIndex.h"
 
 int main() {
   int N;

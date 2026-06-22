@@ -1,4 +1,4 @@
-#include "func_10.h"
+#include "HashTable.h"
 
 #include <list>
 #include <stdexcept>

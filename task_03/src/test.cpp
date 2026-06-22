@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "func_03.h"
+#include "PhoneCombinations.h"
 
 TEST(PhoneCombinations, Example23) {
   std::string s = "23";

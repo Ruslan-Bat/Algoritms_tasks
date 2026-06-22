@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "func_02.h"
+#include "FindBoundaryIndex.h"
 
 TEST(Border01, Minimal) {
   std::vector<int> a{0, 1};

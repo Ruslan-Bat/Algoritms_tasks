@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "func_11.h"
+#include "FindAnagramIndex.h"
 
 TEST(Func11, BasicExample) {
   std::string s = "abcsrlfcxdms";

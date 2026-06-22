@@ -3,7 +3,7 @@
 
 #include <stdexcept>
 
-#include "func_10.h"
+#include "HashTable.h"
 
 TEST(HashTable, InsertGetContains) {
   HashTable ht(10);

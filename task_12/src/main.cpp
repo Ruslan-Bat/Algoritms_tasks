@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include "func_12.h"
+#include "MinCoins.h"
 
 int main() {
   int S, N;

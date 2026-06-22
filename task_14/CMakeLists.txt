@@ -18,7 +18,7 @@ list(REMOVE_ITEM source_list ${test_list})
 include_directories(${PROJECT_NAME} PUBLIC src)
 
 add_executable(${PROJECT_NAME} ${source_list}
-  src/func_14.cpp)
+  src/CanReachNonDecreasingSegment.cpp)
 target_link_libraries(${PROJECT_NAME} PUBLIC Utils)
 
 # Locate GTest

@@ -1,7 +1,7 @@
 
 #include <gtest/gtest.h>
 
-#include "func_09.h"
+#include "AVLTree.h"
 
 TEST(AVLTreeTest, InsertFindSimple) {
   AVLTree tree;

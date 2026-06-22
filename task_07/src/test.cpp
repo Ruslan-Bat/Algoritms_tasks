@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "func_07.h"
+#include "MergeSort.h"
 
 TEST(MergeSort, Example1) {
   std::vector<int> v{5, 3, 1, 4, 2};

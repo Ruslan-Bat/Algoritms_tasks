@@ -1,8 +1,8 @@
-#include "func_01.h"
+#include "FindPair.h"
 
 #include <vector>
 
-std::vector<int> FindPair(int S, std::vector<int>& mass) {
+std::vector<int> FindPair(int S, const std::vector<int>& mass) {
   int right = 0;
   int left = (int)mass.size() - 1;
   std::vector<int> result = {-1};

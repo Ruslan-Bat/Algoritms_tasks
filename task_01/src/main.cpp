@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include "func_01.h"
+#include "FindPair.h"
 
 int main() {
   int S, N;

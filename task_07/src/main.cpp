@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 
-#include "func_07.h"
+#include "MergeSort.h"
 
 int main() {
   int n;

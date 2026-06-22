@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include "func_08.h"
+#include "QuickSelect.h"
 
 int main() {
   int N, K;

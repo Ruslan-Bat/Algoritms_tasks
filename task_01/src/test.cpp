@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "func_01.h"
+#include "FindPair.h"
 TEST(FindPair, Example1) {
   std::vector<int> v{2, 7, 11, 15};
   ASSERT_EQ((std::vector<int>{2, 7}), FindPair(9, v));

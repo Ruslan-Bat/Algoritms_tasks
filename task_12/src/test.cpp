@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "func_12.h"
+#include "MinCoins.h"
 
 TEST(Func12, Example1) {
   std::vector<int> coins = {1, 2, 5, 10};

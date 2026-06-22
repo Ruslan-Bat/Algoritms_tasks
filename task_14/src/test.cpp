@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "func_14.h"
+#include "CanReachNonDecreasingSegment.h"
 
 TEST(CanReachNonDecreasingSegment, Example) {
   std::vector<std::vector<int>> matrix = {

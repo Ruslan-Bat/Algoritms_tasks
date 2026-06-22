@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include "func_13.h"
+#include "SelectMaxNonOverlappingIntervals.h"
 
 int main() {
   int n;
