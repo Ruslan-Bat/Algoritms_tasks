@@ -3,4 +3,4 @@
 #include <string>
 #include <vector>
 
-std::vector<std::string> func(const std::string& digits);
+std::vector<std::string> PhoneCombinations(const std::string& digits);

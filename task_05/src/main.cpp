@@ -15,7 +15,7 @@ int main() {
     temps.push_back(t);
   }
 
-  std::vector<int> res = func(N, temps);
+  std::vector<int> res = DistanceToNextGreaterElement(temps);
 
   for (int i = 0; i < (int)res.size(); ++i) {
     if (i) std::cout << ' ';

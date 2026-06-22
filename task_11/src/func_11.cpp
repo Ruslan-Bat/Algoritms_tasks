@@ -3,9 +3,7 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
-int func(const string& s, const string& p) {
+int FindAnagramIndex(const std::string& s, const std::string& p) {
   int s_len = s.length();
   int p_len = p.length();
 
@@ -13,8 +11,8 @@ int func(const string& s, const string& p) {
     return -1;
   }
 
-  vector<int> p_count(26, 0);
-  vector<int> window_count(26, 0);
+  std::vector<int> p_count(26, 0);
+  std::vector<int> window_count(26, 0);
 
   for (int i = 0; i < p_len; ++i) {
     p_count[p[i] - 'a']++;

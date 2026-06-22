@@ -13,7 +13,7 @@ int main() {
     std::cin >> s >> e;
     lessons.emplace_back(s, e);
   }
-  auto res = func(n, lessons);
+  auto res = SelectMaxNonOverlappingIntervals(n, lessons);
   std::cout << res.size() << '\n';
   for (auto &pr : res) {
     std::cout << pr.first << ' ' << pr.second << '\n';

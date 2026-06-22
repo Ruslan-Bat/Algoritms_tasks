@@ -1,14 +1,13 @@
 #include "func_01.h"
 
 #include <vector>
-using namespace std;
 
-vector<int> func(int S, int N, vector<int>& mass) {
+std::vector<int> FindPair(int S, std::vector<int>& mass) {
   int right = 0;
-  int left = N - 1;
-  vector<int> result = {-1};
+  int left = (int)mass.size() - 1;
+  std::vector<int> result = {-1};
 
-  if (N < 2) return result;
+  if (mass.size() < 2) return result;
 
   if (mass[right] > mass[left]) {  // в порядке убывания
     while (mass[right] + mass[left] != S) {
@@ -32,7 +31,8 @@ vector<int> func(int S, int N, vector<int>& mass) {
   }
 
   if (mass[right] + mass[left] == S)
-    result = {min(mass[right], mass[left]), max(mass[right], mass[left])};
+    result = {std::min(mass[right], mass[left]),
+              std::max(mass[right], mass[left])};
 
   return result;
 }

@@ -2,4 +2,4 @@
 
 #include <vector>
 
-std::vector<int> func(int N, const std::vector<int>& temp);
+std::vector<int> DistanceToNextGreaterElement(const std::vector<int>& temp);

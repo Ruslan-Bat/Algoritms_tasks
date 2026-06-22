@@ -2,19 +2,18 @@
 #include <utility>
 #include <vector>
 
-using namespace std;
+std::vector<std::pair<double, double>> SelectMaxNonOverlappingIntervals(
+    int n, std::vector<std::pair<double, double>>& lessons) {
+  std::sort(lessons.begin(), lessons.end(),
+            [](const std::pair<double, double>& a,
+               const std::pair<double, double>& b) {
+              if (a.second != b.second) {
+                return a.second < b.second;
+              }
+              return a.first < b.first;
+            });
 
-vector<pair<double, double>> func(int n,
-                                  vector<pair<double, double>>& lessons) {
-  sort(lessons.begin(), lessons.end(),
-       [](const pair<double, double>& a, const pair<double, double>& b) {
-         if (a.second != b.second) {
-           return a.second < b.second;
-         }
-         return a.first < b.first;
-       });
-
-  vector<pair<double, double>> selected;
+  std::vector<std::pair<double, double>> selected;
   double last_end_time = -1.0;
 
   for (const auto& lesson : lessons) {

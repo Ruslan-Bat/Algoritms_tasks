@@ -13,17 +13,17 @@ class AVLTree {
 
   Node* root;
 
-  int height(Node* p);
-  int bfactor(Node* p);
-  void fixheight(Node* p);
-  Node* rotateRight(Node* p);
-  Node* rotateLeft(Node* q);
-  Node* balance(Node* p);
-  Node* insertNode(Node* p, int k);
-  Node* removeNode(Node* p, int k);
-  Node* findMin(Node* p);
-  Node* removeMin(Node* p);
-  void deleteTree(Node* p);
+  int Height(Node* p);
+  int BFactor(Node* p);
+  void FixHeight(Node* p);
+  Node* RotateRight(Node* p);
+  Node* RotateLeft(Node* q);
+  Node* Balance(Node* p);
+  Node* InsertNode(Node* p, int k);
+  Node* RemoveNode(Node* p, int k);
+  Node* FindMin(Node* p);
+  Node* RemoveMin(Node* p);
+  void DeleteTree(Node* p);
 
  public:
   AVLTree();

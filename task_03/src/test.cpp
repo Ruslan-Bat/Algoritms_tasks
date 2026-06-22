@@ -9,7 +9,7 @@
 
 TEST(PhoneCombinations, Example23) {
   std::string s = "23";
-  auto res = func(s);
+  auto res = PhoneCombinations(s);
   std::vector<std::string> expect = {"ad", "ae", "af", "bd", "be",
                                      "bf", "cd", "ce", "cf"};
   ASSERT_EQ(expect, res);
@@ -17,14 +17,14 @@ TEST(PhoneCombinations, Example23) {
 
 TEST(PhoneCombinations, SingleDigit) {
   std::string s = "2";
-  auto res = func(s);
+  auto res = PhoneCombinations(s);
   std::vector<std::string> expect = {"a", "b", "c"};
   ASSERT_EQ(expect, res);
 }
 
 TEST(PhoneCombinations, Example79) {
   std::string s = "79";
-  auto res = func(s);
+  auto res = PhoneCombinations(s);
   std::vector<std::string> expect = {"pw", "px", "py", "pz", "qw", "qx",
                                      "qy", "qz", "rw", "rx", "ry", "rz",
                                      "sw", "sx", "sy", "sz"};
@@ -33,14 +33,14 @@ TEST(PhoneCombinations, Example79) {
 
 TEST(PhoneCombinations, EmptyInput) {
   std::string s = "";
-  auto res = func(s);
+  auto res = PhoneCombinations(s);
   std::vector<std::string> expect = {""};
   ASSERT_EQ(expect, res);
 }
 
 TEST(PhoneCombinations, LengthAndSorted) {
   std::string s = "234";
-  auto res = func(s);
+  auto res = PhoneCombinations(s);
   // expected size 3*3*3 = 27
   ASSERT_EQ(27u, res.size());
   // each string must have length equal to input
@@ -51,7 +51,7 @@ TEST(PhoneCombinations, LengthAndSorted) {
 
 TEST(PhoneCombinations, OtherDigit) {
   std::string s = "8";
-  auto res = func(s);
+  auto res = PhoneCombinations(s);
   std::vector<std::string> expect = {"t", "u", "v"};
   ASSERT_EQ(expect, res);
 }

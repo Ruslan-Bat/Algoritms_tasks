@@ -15,7 +15,7 @@ int main() {
     costs.push_back(p);
   }
 
-  long long ans = func(N, K, costs);
+  long long ans = MinTotalCost(K, costs);
   std::cout << ans << '\n';
   return 0;
 }

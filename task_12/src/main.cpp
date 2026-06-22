@@ -9,7 +9,7 @@ int main() {
   if (!(std::cin >> N)) return 0;
   std::vector<int> coins(N);
   for (int i = 0; i < N; ++i) std::cin >> coins[i];
-  int res = func(S, N, coins);
+  int res = MinCoins(S, coins);
   std::cout << res << '\n';
   return 0;
 }

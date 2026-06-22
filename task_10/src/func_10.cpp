@@ -4,8 +4,8 @@
 #include <stdexcept>
 #include <vector>
 
-void hash_table::Insert(int key, int value) {
-  int index = get_index_bucket(key);
+void HashTable::Insert(int key, int value) {
+  int index = GetIndexBucket(key);
 
   for (std::pair<int, int>& pair : buckets[index]) {
     if (pair.first == key) {
@@ -17,8 +17,8 @@ void hash_table::Insert(int key, int value) {
   num_elements++;
 }
 
-int hash_table::Get(int key) {
-  int index = get_index_bucket(key);
+int HashTable::Get(int key) {
+  int index = GetIndexBucket(key);
 
   for (std::pair<int, int>& pair : buckets[index]) {
     if (pair.first == key) {
@@ -28,8 +28,8 @@ int hash_table::Get(int key) {
   throw std::out_of_range("Ключа нет");
 }
 
-void hash_table::Remove(int key) {
-  int index = get_index_bucket(key);
+void HashTable::Remove(int key) {
+  int index = GetIndexBucket(key);
 
   std::list<std::pair<int, int>>& chain = buckets[index];
   for (auto it = chain.begin(); it != chain.end(); ++it) {
@@ -41,8 +41,8 @@ void hash_table::Remove(int key) {
   }
 }
 
-bool hash_table::Contains(int key) {
-  int index = get_index_bucket(key);
+bool HashTable::Contains(int key) {
+  int index = GetIndexBucket(key);
 
   for (std::pair<int, int>& pair : buckets[index]) {
     if (pair.first == key) {

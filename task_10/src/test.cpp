@@ -6,7 +6,7 @@
 #include "func_10.h"
 
 TEST(HashTable, InsertGetContains) {
-  hash_table ht(10);
+  HashTable ht(10);
   ht.Insert(1, 10);
   ht.Insert(2, 20);
   ht.Insert(3, 30);
@@ -21,7 +21,7 @@ TEST(HashTable, InsertGetContains) {
 }
 
 TEST(HashTable, UpdateValue) {
-  hash_table ht(10);
+  HashTable ht(10);
   ht.Insert(1, 10);
   EXPECT_EQ(ht.Get(1), 10);
   ht.Insert(1, 100);
@@ -29,7 +29,7 @@ TEST(HashTable, UpdateValue) {
 }
 
 TEST(HashTable, RemoveAndExceptions) {
-  hash_table ht(10);
+  HashTable ht(10);
   ht.Insert(5, 50);
   EXPECT_TRUE(ht.Contains(5));
   ht.Remove(5);
@@ -39,7 +39,7 @@ TEST(HashTable, RemoveAndExceptions) {
 }
 
 TEST(HashTable, ManyCollisions) {
-  hash_table ht(1);  // all keys map to same bucket
+  HashTable ht(1);  // all keys map to same bucket
   for (int i = 0; i < 20; ++i) ht.Insert(i, i * 10);
   for (int i = 0; i < 20; ++i) {
     EXPECT_TRUE(ht.Contains(i));

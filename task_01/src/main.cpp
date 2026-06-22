@@ -15,6 +15,6 @@ int main() {
     std::cin >> x;
     mass.push_back(x);
   }
-  func(S, N, mass);
+  FindPair(S, mass);
   return 0;
 }

@@ -14,7 +14,7 @@ int main() {
     std::cin >> x;
     mass.push_back(x);
   }
-  int a = func(N, mass);
+  int a = FindBoundaryIndex(mass);
   std::cout << a << std::endl;
   return 0;
 }

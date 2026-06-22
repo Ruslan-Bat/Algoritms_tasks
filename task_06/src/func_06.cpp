@@ -2,11 +2,12 @@
 
 #include <deque>
 #include <vector>
-using namespace std;
 
-long long func(int N, int K, const vector<int>& costs) {
+long long MinTotalCost(int K, const std::vector<int>& costs) {
   long long result = 0;
-  deque<int> ind_min_costs;
+  std::deque<int> ind_min_costs;
+
+  int N = (int)costs.size();
 
   for (int i = 0; i < N; i++) {
     if (!ind_min_costs.empty() && i - ind_min_costs.front() >= K)

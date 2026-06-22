@@ -2,89 +2,89 @@
 
 AVLTree::AVLTree() : root(nullptr) {}
 
-AVLTree::~AVLTree() { deleteTree(root); }
+AVLTree::~AVLTree() { DeleteTree(root); }
 
-int AVLTree::height(AVLTree::Node* p) { return p ? p->height : 0; }
+int AVLTree::Height(AVLTree::Node* p) { return p ? p->height : 0; }
 
-int AVLTree::bfactor(AVLTree::Node* p) {
-  return height(p->right) - height(p->left);
+int AVLTree::BFactor(AVLTree::Node* p) {
+  return Height(p->right) - Height(p->left);
 }
 
-void AVLTree::fixheight(AVLTree::Node* p) {
-  int hl = height(p->left);
-  int hr = height(p->right);
+void AVLTree::FixHeight(AVLTree::Node* p) {
+  int hl = Height(p->left);
+  int hr = Height(p->right);
   p->height = (hl > hr ? hl : hr) + 1;
 }
 
-AVLTree::Node* AVLTree::rotateRight(AVLTree::Node* p) {
+AVLTree::Node* AVLTree::RotateRight(AVLTree::Node* p) {
   AVLTree::Node* q = p->left;
   p->left = q->right;
   q->right = p;
-  fixheight(p);
-  fixheight(q);
+  FixHeight(p);
+  FixHeight(q);
   return q;
 }
 
-AVLTree::Node* AVLTree::rotateLeft(AVLTree::Node* q) {
+AVLTree::Node* AVLTree::RotateLeft(AVLTree::Node* q) {
   AVLTree::Node* p = q->right;
   q->right = p->left;
   p->left = q;
-  fixheight(q);
-  fixheight(p);
+  FixHeight(q);
+  FixHeight(p);
   return p;
 }
 
-AVLTree::Node* AVLTree::balance(AVLTree::Node* p) {
-  fixheight(p);
+AVLTree::Node* AVLTree::Balance(AVLTree::Node* p) {
+  FixHeight(p);
 
-  if (bfactor(p) == 2) {
-    if (bfactor(p->right) < 0) {
-      p->right = rotateRight(p->right);
+  if (BFactor(p) == 2) {
+    if (BFactor(p->right) < 0) {
+      p->right = RotateRight(p->right);
     }
-    return rotateLeft(p);
+    return RotateLeft(p);
   }
 
-  if (bfactor(p) == -2) {
-    if (bfactor(p->left) > 0) {
-      p->left = rotateLeft(p->left);
+  if (BFactor(p) == -2) {
+    if (BFactor(p->left) > 0) {
+      p->left = RotateLeft(p->left);
     }
-    return rotateRight(p);
+    return RotateRight(p);
   }
 
   return p;
 }
 
-AVLTree::Node* AVLTree::insertNode(AVLTree::Node* p, int k) {
+AVLTree::Node* AVLTree::InsertNode(AVLTree::Node* p, int k) {
   if (!p) return new AVLTree::Node(k);
 
   if (k < p->key) {
-    p->left = insertNode(p->left, k);
+    p->left = InsertNode(p->left, k);
   } else if (k > p->key) {
-    p->right = insertNode(p->right, k);
+    p->right = InsertNode(p->right, k);
   } else {
     return p;
   }
 
-  return balance(p);
+  return Balance(p);
 }
 
-AVLTree::Node* AVLTree::findMin(AVLTree::Node* p) {
-  return p->left ? findMin(p->left) : p;
+AVLTree::Node* AVLTree::FindMin(AVLTree::Node* p) {
+  return p->left ? FindMin(p->left) : p;
 }
 
-AVLTree::Node* AVLTree::removeMin(AVLTree::Node* p) {
+AVLTree::Node* AVLTree::RemoveMin(AVLTree::Node* p) {
   if (p->left == nullptr) return p->right;
-  p->left = removeMin(p->left);
-  return balance(p);
+  p->left = RemoveMin(p->left);
+  return Balance(p);
 }
 
-AVLTree::Node* AVLTree::removeNode(AVLTree::Node* p, int k) {
+AVLTree::Node* AVLTree::RemoveNode(AVLTree::Node* p, int k) {
   if (!p) return nullptr;
 
   if (k < p->key) {
-    p->left = removeNode(p->left, k);
+    p->left = RemoveNode(p->left, k);
   } else if (k > p->key) {
-    p->right = removeNode(p->right, k);
+    p->right = RemoveNode(p->right, k);
   } else {
     AVLTree::Node* q = p->left;
     AVLTree::Node* r = p->right;
@@ -92,27 +92,27 @@ AVLTree::Node* AVLTree::removeNode(AVLTree::Node* p, int k) {
 
     if (!r) return q;
 
-    AVLTree::Node* min = findMin(r);
-    min->right = removeMin(r);
+    AVLTree::Node* min = FindMin(r);
+    min->right = RemoveMin(r);
     min->left = q;
 
-    return balance(min);
+    return Balance(min);
   }
-  return balance(p);
+  return Balance(p);
 }
 
-void AVLTree::deleteTree(AVLTree::Node* p) {
+void AVLTree::DeleteTree(AVLTree::Node* p) {
   if (p != nullptr) {
-    deleteTree(p->left);
-    deleteTree(p->right);
+    DeleteTree(p->left);
+    DeleteTree(p->right);
 
     delete p;
   }
 }
 
-void AVLTree::Insert(int key) { root = insertNode(root, key); }
+void AVLTree::Insert(int key) { root = InsertNode(root, key); }
 
-void AVLTree::Remove(int key) { root = removeNode(root, key); }
+void AVLTree::Remove(int key) { root = RemoveNode(root, key); }
 
 bool AVLTree::Find(int key) {
   AVLTree::Node* current = root;

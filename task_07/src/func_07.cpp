@@ -1,11 +1,10 @@
 #include "func_07.h"
 
 #include <vector>
-using namespace std;
 
 namespace {
 
-void merge(vector<int>& arr, std::vector<int>& buffer, int left, int mid,
+void Merge(std::vector<int>& arr, std::vector<int>& buffer, int left, int mid,
            int right) {
   int it1 = left;
   int it2 = mid;
@@ -28,25 +27,25 @@ void merge(vector<int>& arr, std::vector<int>& buffer, int left, int mid,
   }
 }
 
-void merge_sort_impl(vector<int>& arr, vector<int>& buffer, int left,
-                     int right) {
+void MergeSortImpl(std::vector<int>& arr, std::vector<int>& buffer, int left,
+                   int right) {
   if (right - left <= 1) return;
 
   int mid = left + (right - left) / 2;
 
-  merge_sort_impl(arr, buffer, left, mid);
-  merge_sort_impl(arr, buffer, mid, right);
+  MergeSortImpl(arr, buffer, left, mid);
+  MergeSortImpl(arr, buffer, mid, right);
 
-  merge(arr, buffer, left, mid, right);
+  Merge(arr, buffer, left, mid, right);
 }
 
 }  // namespace
 
-void merge_sort(vector<int>& arr) {
+void MergeSort(std::vector<int>& arr) {
   if (arr.size() <= 1) return;
 
   // один раз созлаем buffer и работаем с ним вместо постоянного создания
   // векторов в merge :)
   std::vector<int> buffer(arr.size());
-  merge_sort_impl(arr, buffer, 0, arr.size());
+  MergeSortImpl(arr, buffer, 0, arr.size());
 }

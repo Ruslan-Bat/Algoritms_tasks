@@ -2,12 +2,10 @@
 
 #include <vector>
 
-using namespace std;
-vector<int> func(int N, const vector<int>& temp) {
-  vector<int> result(N, 0);
-  vector<int> indexes;
-
-  for (int index = 0; index < N; index++) {
+std::vector<int> DistanceToNextGreaterElement(const std::vector<int>& temp) {
+  std::vector<int> result((int)temp.size(), 0);
+  std::vector<int> indexes;
+  for (int index = 0; index < (int)temp.size(); index++) {
     while (!indexes.empty() && temp[index] > temp[indexes.back()]) {
       result[indexes.back()] = index - indexes.back();
       indexes.pop_back();

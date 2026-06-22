@@ -9,7 +9,7 @@ int main() {
   if (!(std::cin >> n)) return 0;
   std::vector<int> a(n);
   for (int i = 0; i < n; ++i) std::cin >> a[i];
-  merge_sort(a);
+  MergeSort(a);
   for (int i = 0; i < n; ++i) {
     if (i) std::cout << ' ';
     std::cout << a[i];
