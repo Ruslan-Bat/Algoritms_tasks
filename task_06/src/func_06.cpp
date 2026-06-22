@@ -5,7 +5,7 @@
 using namespace std;
 
 long long func(int N, int K, const vector<int>& costs) {
-  int result = 0;
+  long long result = 0;
   deque<int> ind_min_costs;
 
   for (int i = 0; i < N; i++) {
@@ -17,7 +17,7 @@ long long func(int N, int K, const vector<int>& costs) {
     }
 
     ind_min_costs.push_back(i);
-    // теперь в начале очереди гарантировано минимаьлная цена на рыбу для i-того
+    // теперь в начале очереди гарантировано минимальная цена на рыбу для i-того
     // дня
     result += costs[ind_min_costs.front()];
   }

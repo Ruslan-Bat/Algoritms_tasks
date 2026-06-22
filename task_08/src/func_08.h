@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 
-int quick_selest(int N, int K, std::vector<int>& arr);
+int quick_select(int N, int K, std::vector<int>& arr);

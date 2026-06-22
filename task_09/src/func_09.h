@@ -1,16 +1,16 @@
 #pragma once
 
-struct Node {
-  int key;
-  int height;
-  Node* left;
-  Node* right;
-
-  Node(int k) : key(k), height(1), left(nullptr), right(nullptr) {}
-};
-
 class AVLTree {
  private:
+  struct Node {
+    int key;
+    int height;
+    Node* left;
+    Node* right;
+
+    Node(int k) : key(k), height(1), left(nullptr), right(nullptr) {}
+  };
+
   Node* root;
 
   int height(Node* p);

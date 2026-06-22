@@ -1,4 +1,4 @@
 #pragma once
 #include <string>
 
-int func(std::string& s, std::string& p);
+int func(const std::string& s, const std::string& p);

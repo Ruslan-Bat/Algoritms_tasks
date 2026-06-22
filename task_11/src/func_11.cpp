@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int func(string& s, string& p) {
+int func(const string& s, const string& p) {
   int s_len = s.length();
   int p_len = p.length();
 

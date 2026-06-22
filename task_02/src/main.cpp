@@ -16,5 +16,5 @@ int main() {
   }
   int a = func(N, mass);
   std::cout << a << std::endl;
-  return a;
+  return 0;
 }

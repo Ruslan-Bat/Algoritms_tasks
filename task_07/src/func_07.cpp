@@ -3,6 +3,8 @@
 #include <vector>
 using namespace std;
 
+namespace {
+
 void merge(vector<int>& arr, std::vector<int>& buffer, int left, int mid,
            int right) {
   int it1 = left;
@@ -24,7 +26,6 @@ void merge(vector<int>& arr, std::vector<int>& buffer, int left, int mid,
   for (int i = left; i < right; ++i) {
     arr[i] = buffer[i];
   }
-  return;
 }
 
 void merge_sort_impl(vector<int>& arr, vector<int>& buffer, int left,
@@ -37,9 +38,9 @@ void merge_sort_impl(vector<int>& arr, vector<int>& buffer, int left,
   merge_sort_impl(arr, buffer, mid, right);
 
   merge(arr, buffer, left, mid, right);
-
-  return;
 }
+
+}  // namespace
 
 void merge_sort(vector<int>& arr) {
   if (arr.size() <= 1) return;

@@ -1,10 +1,15 @@
+#include "func_08.h"
+
 #include <cstdlib>
+#include <random>
 #include <vector>
 
 using namespace std;
 
 int partition(vector<int>& arr, int left, int right) {
-  int pivot_index = left + (rand() % (right - left + 1));
+  static thread_local std::mt19937 rng(std::random_device{}());
+  std::uniform_int_distribution<int> dist(left, right);
+  int pivot_index = dist(rng);
   swap(arr[pivot_index], arr[right]);
 
   int pivot = arr[right];
@@ -20,7 +25,7 @@ int partition(vector<int>& arr, int left, int right) {
   return i;
 }
 
-int quick_selest_impl(vector<int>& arr, int left, int right, int N) {
+int quick_select_impl(vector<int>& arr, int left, int right, int N) {
   if (left == right) return arr[left];
 
   int pivot_index = partition(arr, left, right);
@@ -28,11 +33,11 @@ int quick_selest_impl(vector<int>& arr, int left, int right, int N) {
   if (pivot_index == N)
     return arr[pivot_index];
   else if (pivot_index > N)
-    return quick_selest_impl(arr, left, pivot_index - 1, N);
+    return quick_select_impl(arr, left, pivot_index - 1, N);
   else
-    return quick_selest_impl(arr, pivot_index + 1, right, N);
+    return quick_select_impl(arr, pivot_index + 1, right, N);
 }
 
-int quick_selest(int N, int K, vector<int>& arr) {
-  return quick_selest_impl(arr, 0, arr.size() - 1, K - 1);
+int quick_select(int N, int K, vector<int>& arr) {
+  return quick_select_impl(arr, 0, arr.size() - 1, K - 1);
 }
