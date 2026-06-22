@@ -15,6 +15,11 @@ int main() {
     std::cin >> x;
     mass.push_back(x);
   }
-  FindPair(S, mass);
+  std::vector<int> result = FindPair(S, mass);
+  for (size_t i = 0; i < result.size(); ++i) {
+    if (i) std::cout << ' ';
+    std::cout << result[i];
+  }
+  std::cout << '\n';
   return 0;
 }
