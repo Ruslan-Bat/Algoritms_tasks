@@ -30,7 +30,7 @@ std::vector<int> FindPair(int S, const std::vector<int>& mass) {
     }
   }
 
-  if (mass[right] + mass[left] == S)
+  if (right < left && mass[right] + mass[left] == S)
     result = {std::min(mass[right], mass[left]),
               std::max(mass[right], mass[left])};
 

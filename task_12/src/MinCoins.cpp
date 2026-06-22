@@ -2,7 +2,7 @@
 
 #include <vector>
 
-int MinCoins(int S, std::vector<int>& coins) {
+int MinCoins(int S, const std::vector<int>& coins) {
   const int INF = S + 1;
   std::vector<int> dp(S + 1, INF);
 

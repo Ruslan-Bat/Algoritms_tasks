@@ -5,7 +5,7 @@
 #include <vector>
 
 std::vector<std::pair<double, double>> SelectMaxNonOverlappingIntervals(
-    int n, const std::vector<std::pair<double, double>>& lessons) {
+    const std::vector<std::pair<double, double>>& lessons) {
   std::vector<std::pair<double, double>> sorted_lessons = lessons;
   std::sort(sorted_lessons.begin(), sorted_lessons.end(),
             [](const std::pair<double, double>& a,

@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <random>
 #include <vector>
-
+namespace {
 int Partition(std::vector<int>& arr, int left, int right) {
   static thread_local std::mt19937 rng(std::random_device{}());
   std::uniform_int_distribution<int> dist(left, right);
@@ -35,6 +35,7 @@ int QuickSelectImpl(std::vector<int>& arr, int left, int right, int N) {
   else
     return QuickSelectImpl(arr, pivot_index + 1, right, N);
 }
+}  // namespace
 
 int QuickSelect(int K, std::vector<int>& arr) {
   return QuickSelectImpl(arr, 0, (int)arr.size() - 1, K - 1);
